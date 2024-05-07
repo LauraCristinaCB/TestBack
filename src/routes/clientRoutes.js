@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const stateController = require('../controller/stateController');
+const clientController = require('../controller/clientController');
 
 /* GET a new resource */
-router.get('/', stateController.getState)
+router.get('/', clientController.getClient)
 
 module.exports = router

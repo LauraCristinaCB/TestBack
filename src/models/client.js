@@ -1,26 +1,26 @@
 const { DataTypes } = require('sequelize');
 const { sequelize } = require('../services/connection');
 
-const State = sequelize.define('State', {
+const client = sequelize.define('Client', {
     // Model attributes are defined here
-    state_name: {
+    name: {
     type: DataTypes.STRING,
     allowNull: true,
     unique: false
     },
-    capital: {
+    email: {
     type: DataTypes.STRING,
-    allowNull: true,
-    unique: false
+    allowNull: false,
+    unique: true
     },
-    state_bird: {
+    password: {
     type: DataTypes.STRING,
-    allowNull: true,
+    allowNull: false,
     unique: false
     },
 });
 
 module.exports = {
-    State
+    client
 }
 
