@@ -5,6 +5,17 @@ const getClient = async (id) =>{
     return clientObj;
 }
 
+const getLogin = async (email,password) =>{
+    const loginObj = await client.client.findOne({
+        where: {
+            email: email,
+            password: password
+        },
+    });
+    return loginObj;
+}
+
 module.exports = {
-    getClient
+    getClient,
+    getLogin
 }
